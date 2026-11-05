@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mi primera página web, publicada con GitHub Pages.">
+  <title>Richard · Mi primera página</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #2563eb;
+      --accent-2: #7c3aed;
+      --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(15, 23, 42, .08);
+    }
+    :root[data-theme="dark"] {
+      --bg: #0b1120;
+      --card: #111a2e;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-2: #a78bfa;
+      --border: #1e293b;
+      --shadow: 0 4px 24px rgba(0, 0, 0, .4);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background .3s, color .3s;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navegación */
+    header.nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { font-weight: 700; text-decoration: none; color: var(--text); }
+    .nav nav { display: flex; gap: 18px; align-items: center; }
+    .nav nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+    .nav nav a:hover { color: var(--accent); }
+    .icon-btn {
+      background: none; border: 1px solid var(--border); color: var(--text);
+      width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 1.1rem;
+    }
+
+    /* Héroe */
+    .hero { padding: 90px 0 70px; text-align: center; }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.15; margin: 0 0 16px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 520px; margin: 0 auto 28px; }
+    .btn {
+      display: inline-block; padding: 12px 22px; font-size: 1rem; font-weight: 600;
+      border: none; border-radius: 10px; cursor: pointer; text-decoration: none;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 99, 235, .35); }
+    .btn.ghost { background: none; color: var(--text); border: 1px solid var(--border); margin-left: 8px; }
+    .btn.ghost:hover { box-shadow: none; border-color: var(--accent); }
+
+    /* Secciones */
+    section { padding: 50px 0; }
+    section h2 { font-size: 1.8rem; margin: 0 0 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 22px; box-shadow: var(--shadow); transition: transform .2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card .emoji { font-size: 1.8rem; }
+    .card h3 { margin: 8px 0 6px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    /* Contador */
+    .demo { text-align: center; }
+    .demo .count { font-size: 3.5rem; font-weight: 800; margin: 6px 0 14px; }
+    #mensaje { min-height: 1.6em; color: var(--muted); margin-top: 14px; }
+
+    footer { text-align: center; color: var(--muted); padding: 40px 0; border-top: 1px solid var(--border); font-size: .9rem; }
+
+    @media (max-width: 560px) {
+      .nav nav a.hide-sm { display: none; }
+      .btn.ghost { margin: 10px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="#inicio">👋 Richard</a>
+      <nav>
+        <a class="hide-sm" href="#sobre-mi">Sobre mí</a>
+        <a class="hide-sm" href="#proyectos">Proyectos</a>
+        <a class="hide-sm" href="#demo">Demo</a>
+        <button class="icon-btn" id="tema" aria-label="Cambiar tema">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="hero" id="inicio">
+        <h1>¡Hola, mundo!<br>Estoy aprendiendo a crear en la web</h1>
+        <p>Esta es mi primera página, guardada en GitHub y publicada con GitHub Pages.</p>
+        <a class="btn" href="#demo">Probar la demo</a>
+        <a class="btn ghost" href="https://github.com/richardsh27/prueba" target="_blank" rel="noopener">Ver código</a>
+      </div>
+
+      <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>Soy Richard y estoy dando mis primeros pasos con Git, GitHub y el desarrollo web. Este sitio es mi laboratorio: aquí pruebo ideas, cometo errores y aprendo con cada cambio.</p>
+      </section>
+
+      <section id="proyectos">
+        <h2>Lo que estoy aprendiendo</h2>
+        <div class="grid">
+          <article class="card"><div class="emoji">🌱</div><h3>Git</h3><p>Commits, ramas y pull requests para guardar el historial de mis cambios.</p></article>
+          <article class="card"><div class="emoji">🎨</div><h3>HTML y CSS</h3><p>Estructura y estilo: diseño adaptable, colores y modo oscuro.</p></article>
+          <article class="card"><div class="emoji">⚡</div><h3>JavaScript</h3><p>Interactividad: botones, contadores y respuestas a lo que hace el usuario.</p></article>
+        </div>
+      </section>
+
+      <section id="demo" class="demo">
+        <h2>Demo interactiva</h2>
+        <div class="card">
+          <div class="count" id="contador">0</div>
+          <button class="btn" id="sumar">Púlsame</button>
+          <button class="btn ghost" id="reiniciar">Reiniciar</button>
+          <p id="mensaje" aria-live="polite"></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Hecho con ❤️ y aprendiendo · <span id="anio"></span></div>
+  </footer>
+
+  <script>
+    const raiz = document.documentElement;
+    const botonTema = document.getElementById("tema");
+
+    function aplicarTema(tema) {
+      raiz.dataset.theme = tema;
+      botonTema.textContent = tema === "dark" ? "☀️" : "🌙";
+    }
+    let guardado = null;
+    try { guardado = localStorage.getItem("tema"); } catch (e) {}
+    aplicarTema(guardado || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+
+    botonTema.addEventListener("click", () => {
+      const nuevo = raiz.dataset.theme === "dark" ? "light" : "dark";
+      aplicarTema(nuevo);
+      try { localStorage.setItem("tema", nuevo); } catch (e) {}
+    });
+
+    let cuenta = 0;
+    const contador = document.getElementById("contador");
+    const mensaje = document.getElementById("mensaje");
+
+    document.getElementById("sumar").addEventListener("click", () => {
+      cuenta++;
+      contador.textContent = cuenta;
+      const hoy = new Date().toLocaleDateString("es-PE", { weekday: "long", day: "numeric", month: "long" });
+      mensaje.textContent = cuenta === 1
+        ? "¡Funciona! Hoy es " + hoy + "."
+        : cuenta >= 10 ? "🎉 ¡" + cuenta + " clics! Eres constante." : "Llevas " + cuenta + " clics.";
+    });
+
+    document.getElementById("reiniciar").addEventListener("click", () => {
+      cuenta = 0;
+      contador.textContent = 0;
+      mensaje.textContent = "";
+    });
+
+    document.getElementById("anio").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
