@@ -9,7 +9,14 @@ Mi primer proyecto en GitHub: una página web básica.
 
 ## Cómo verla
 
-Descarga `index.html` y ábrelo con doble clic en tu navegador.
+Descarga `index.html` y ábrelo con doble clic en tu navegador, o visita la versión publicada con GitHub Pages:
+https://richardsh27.github.io/prueba/
+
+## Novedades
+
+- Diseño moderno y adaptable a móvil.
+- Modo oscuro (automático según tu sistema, con botón para cambiarlo).
+- Secciones: inicio, sobre mí, lo que estoy aprendiendo y una demo con contador.
 
 ## Conceptos básicos de Git y GitHub
 
